@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-time weather dashboard using JavaScript Fetch API">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="weather-card">
+            <header class="header">
+                <p class="eyebrow">JavaScript REST API</p>
+                <h1>Weather Dashboard</h1>
+                <p>Search for a city to see current weather information.</p>
+            </header>
+
+            <form id="searchForm" class="search-box" autocomplete="off">
+                <label for="cityInput" class="sr-only">City name</label>
+                <input id="cityInput" type="text" placeholder="Enter city name..." maxlength="100">
+                <button type="submit">Search</button>
+            </form>
+
+            <div id="loading" class="loading hidden" role="status">
+                Loading weather...
+            </div>
+
+            <div id="errorMessage" class="error hidden" role="alert"></div>
+
+            <section id="weatherResult" class="weather-result hidden">
+                <div class="location">
+                    <h2 id="cityName">--</h2>
+                    <p id="countryName">--</p>
+                </div>
+
+                <div class="temperature">
+                    <span id="temperature">--</span><span>°C</span>
+                </div>
+
+                <div class="weather-grid">
+                    <article class="weather-item">
+                        <span class="icon">💧</span>
+                        <p>Humidity</p>
+                        <strong id="humidity">--%</strong>
+                    </article>
+
+                    <article class="weather-item">
+                        <span class="icon">💨</span>
+                        <p>Wind Speed</p>
+                        <strong id="windSpeed">-- km/h</strong>
+                    </article>
+
+                    <article class="weather-item">
+                        <span class="icon">🌡️</span>
+                        <p>Feels Like</p>
+                        <strong id="feelsLike">--°C</strong>
+                    </article>
+
+                    <article class="weather-item">
+                        <span class="icon">☁️</span>
+                        <p>Condition</p>
+                        <strong id="weatherCondition">--</strong>
+                    </article>
+                </div>
+
+                <p id="updatedTime" class="updated-time"></p>
+            </section>
+
+            <div id="initialMessage" class="initial-message">
+                <div class="weather-icon">🌤️</div>
+                <h2>Search for a city</h2>
+                <p>Enter a city name above to get live weather information.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
